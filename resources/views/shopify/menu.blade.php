@@ -8,22 +8,22 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is("admin/shopify-integration") ? "active" : "" }}" href="{{ route("admin.shopify-integration.index") }}">Home</a>
+                        <a class="nav-link {{ request()->is("app-shopify") ? "active" : "" }}" href="{{ route("app-shopify.index") }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is("admin/shopify-integration/bulk-migration") ? "active" : "" }}" href="{{ route("admin.shopify-integration.bulkMigration") }}">Bulk Migration</a>
+                        <a class="nav-link {{ request()->is("app-shopify/bulk-migration") ? "active" : "" }}" href="{{ route("app-shopify.bulkMigration") }}">Bulk Migration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is("admin/shopify-integration/selective-migration") ? "active" : "" }}" href="{{ route("admin.shopify-integration.selectiveMigration") }}">Selective Migration</a>
+                        <a class="nav-link {{ request()->is("app-shopify/selective-migration") ? "active" : "" }}" href="{{ route("app-shopify.selectiveMigration") }}">Selective Migration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is("admin/shopify-integration/theme-deployments") ? "active" : "" }}" href="{{ route("admin.shopify-integration.themeDeployments") }}">Theme Deployments</a>
+                        <a class="nav-link {{ request()->is("app-shopify/theme-deployments") ? "active" : "" }}" href="{{ route("app-shopify.themeDeployments") }}">Theme Deployments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is("admin/shopify-integration/history") ? "active" : "" }}" href="{{ route("admin.shopify-integration.history") }}">History & Rollback</a>
+                        <a class="nav-link {{ request()->is("app-shopify/history") ? "active" : "" }}" href="{{ route("app-shopify.history") }}">History & Rollback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is("admin/shopify-integration/settings") ? "active" : "" }}" href="{{ route("admin.shopify-integration.settings") }}">Settings</a>
+                        <a class="nav-link {{ request()->is("app-shopify/settings") ? "active" : "" }}" href="{{ route("app-shopify.settings") }}">Settings</a>
                     </li>
                 </ul>
                 <a href="#">

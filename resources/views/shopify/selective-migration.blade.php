@@ -1,7 +1,7 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('content')
 <div class="container" id="shopifyIntegration">
-    @include('admin.shopify.menu')
+    @include('shopify.menu')
     <main>
         <div class="card">
             <div class="card-header no-bg p-tb-2">

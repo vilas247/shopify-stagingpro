@@ -1,7 +1,15 @@
 <?php
 
-Route::view('/', 'welcome');
+Route::get('app-shopify/install', 'ShopifyAppController@install')->name('app-shopify.install');
+Route::get('app-shopify/generate-token', 'ShopifyAppController@generateToken')->name('app-shopify.generateToken');
 Auth::routes();
+
+Route::get('/', 'ShopifyAppController@index')->name('app-shopify.index');
+Route::get('app-shopify/bulk-migration', 'ShopifyAppController@bulkMigration')->name('app-shopify.bulkMigration');
+Route::get('app-shopify/selective-migration', 'ShopifyAppController@selectiveMigration')->name('app-shopify.selectiveMigration');
+Route::get('app-shopify/theme-deployments', 'ShopifyAppController@themeDeployments')->name('app-shopify.themeDeployments');
+Route::get('app-shopify/history', 'ShopifyAppController@history')->name('app-shopify.history');
+Route::get('app-shopify/settings', 'ShopifyAppController@settings')->name('app-shopify.settings');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', '2fa', 'admin']], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -120,6 +128,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('shopify-integration/theme-deployments', 'ShopifyController@themeDeployments')->name('shopify-integration.themeDeployments');
     Route::get('shopify-integration/history', 'ShopifyController@history')->name('shopify-integration.history');
     Route::get('shopify-integration/settings', 'ShopifyController@settings')->name('shopify-integration.settings');
+
+    Route::get('shopify-api', '\App\Http\Controllers\Api\Shopify\ShopifyApiController@apiCall')->name('shopify-api.apiCall');
+    Route::get('shopify-api/get-products', '\App\Http\Controllers\Api\Shopify\ShopifyApiController@getProducts')->name('shopify-api.getProducts');
+
+    Route::get('shopify-api-graphql/get-products', '\App\Http\Controllers\Api\Shopify\ShopifyGraphIqlApiController@getProducts')->name('shopify-api-graphql.getProducts');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth', '2fa']], function () {
     // Change password
